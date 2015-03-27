@@ -1,0 +1,420 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+*{
+	padding:0;
+	margin:0;
+}
+
+/* Clearfix
+============================================================ */
+clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+/*
+==============================================================*/
+
+
+/* Grid
+===============================================================*/
+.col-container{
+    width: 100%;
+}
+
+.col-header{
+    float: left;
+    width: 80%;
+}
+
+.col-header:first-child{
+    width: 10%;
+}
+
+.col-container{
+    width: 100%;
+}
+
+.col-3{
+    float: left;
+    width: 15%;
+    height: 3.5rem; 
+}
+
+.col-3:nth-child(2){
+    width: 70%;
+}
+
+@media screen and (min-width:500px){
+    .col-3{
+        width: 10%;
+    }
+
+    .col-3:nth-child(2){
+        width: 80%;
+    }
+
+    div[data-role="modal-details"]{
+        top: 7%;
+        max-height: 86%;
+    }
+
+    div[data-role="modal-details"] table tr th{
+        padding: 0.4rem 0;
+    }
+}
+
+
+/*
+===============================================================*/
+
+html{
+	width:100%;
+	height:100%;
+    background: #a588ff;
+   font-family:Tahoma, Verdana, Geneva; 
+ }
+
+body,
+.wrapper{
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+}
+
+.flexible-font{
+    font-size: 5vmin;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+h2{
+    padding: 1rem 0;
+}
+
+h1,h2,h3,h4{
+    font-family: Tahoma, Verdana, Geneva; 
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.vertical-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.horizontal-align{
+  padding-left: 5%;
+}
+
+/*
+============================================================*/
+
+/* Header Styling
+============================================================*/
+header{
+    position: fixed;
+    top:0px;
+    background-color:  #6c0862;
+    height: 60px;
+    z-index: 10;
+    transition: 0.5s margin ease;
+}
+
+[data-role="header"] h1{
+  text-shadow: 3px 2px 2px  #6c0862;
+  -webkit-text-stroke: 1px  #6c0862;
+  color: white;
+  text-align:center;
+  letter-spacing:0.3rem;
+  word-spacing: 1rem;
+  font-variant:small-caps;
+}
+
+/*
+============================================================*/
+
+/* Pages styling
+=============================================================*/
+[data-role="page"]{
+    /*overflow: hidden;*/
+    visibility: hidden;
+    position: absolute;
+    top: 60px;
+    color: #6c0862;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.pt-page-current{
+    visibility: visible;
+ }
+
+.active-page{
+    opacity: 1;
+}
+
+.show{
+/*	display:block;*/
+    visibility: visible;
+}
+.hide{
+	display:none;
+}
+
+/* Sticky Footer styling
+===============================================================*/
+footer {
+    color: white;
+    background-color:  #6c0862;
+    position: fixed;
+    bottom: 0;
+    height: 60px; 
+    width: 100%;
+    z-index: 10;
+}
+
+
+/* Location page styling
+==================================================================*/
+#inner-arch{
+    fill: #a588ff;
+    transform-origin: 150px 150px;
+    -webkit-animation:  rotate 1s linear infinite;
+    -moz-animation   :  rotate 1s linear infinite;
+    -o-animation     :  rotate 1s linear infinite;
+    animation        :  rotate 1s linear infinite;
+}
+
+#map-canvas{
+    width: 90%; 
+    height: 73vh;
+    border: 1px solid #6c0862;
+}
+
+#info-window{
+    background-color: #6c0862;
+    color: white;
+}
+/* Conact Page Styling
+====================================================================*/
+[data-role="listview"]{
+  list-style:none;
+}
+
+[data-role="listview"] li{
+  font-size:1.2rem;
+  line-height:3.5rem;
+  height:3.5rem;
+  border:1px solid  #6c0862;
+  background-color: #a588ff;
+  font-weight:300;
+  cursor:pointer;
+  color:  #6c0862;
+}
+
+[data-role="listview"] li:nth-child(even){
+    background-color: white;
+}
+
+[data-role="listview"] li:hover{
+    background-color: hsla(69, 54%, 21% , 0.5);
+}
+
+
+[data-role="listview"] li:last-child{
+  padding-bottom: 60px;
+}
+
+.contact-img{
+  width: 32px;
+  height: 32px;
+}
+
+.contact-name{
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Overlay and Modal window
+==================================================================*/
+[data-role="modal"]{
+
+}
+
+[data-role="overlay"]{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:15; /* Make it larger than z-index of both header and footer. */
+  height:100%;
+  width:100%;
+  background-color: rgba(0,0,0,0.82);
+}
+
+[data-role="modal-details"]{
+  position:fixed;
+  top:20%;
+  left:5%;
+  width: 85%;
+  z-index:20; /* Make it larger than z-index of overlay div so that contents can be display. */
+  max-height:80%;
+  padding:5vh;
+  border:1px solid #333;
+  min-height:10%;
+  color:#fff;
+  background-color:  #6c0862;
+  box-shadow:1px 1px 2px rgb(0,0,0);
+  box-sizing: border-box;
+}
+
+table tr{
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+table tr th{
+    font-size: 1.2rem;
+    width: 35%;
+    padding: 1.2rem 0;
+}
+
+table tr td img{
+    width: 150px;
+    height: 150px;
+}
+
+.btn{
+    border: 0;
+    float: left;
+    width: 50%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    color: hsl(69,54%,21%);
+    outline: 1px solid #6c0862;
+    background-color: #a588ff;
+}
+
+.btn:first-child{
+    border-right: 1px solid #6c0862;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active{
+    background-color: #a588ff;
+}
+
+[data-role="modal-details"] h4{
+    display: inline-block;
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+
+[data-role="modal-details"] p{
+    padding-left: 5px;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+#btnOkUserLoc{
+    width: 100%;
+}
+
+/* Toast Notification styling
+==================================================================*/
+.fail{
+    background-color: #ccc;
+    color: red;
+    position: fixed;
+    bottom: 70px; 
+    opacity: 0;
+    z-index: 10000003;
+    -webkit-transition: opacity 10s ease-in;
+    transition: opacity 10s ease-in;
+}
+
+/* Animations
+==================================================================*/
+.pt-page-flipOutLeft {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation: flipOutLeft .4s both ease-in;
+    animation: flipOutLeft .4s both ease-in;
+}
+
+.pt-page-flipInRight {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation: flipInRight .5s 0.5s both ease-out;
+    animation: flipInRight .5s 0.5s both ease-out;
+}
+
+/* Key frames
++==================================================================*/
+@-webkit-keyframes flipOutLeft {
+    from { }
+    to { -webkit-transform: translateZ(-1000px) rotateY(-90deg); opacity: 0.2; }
+}
+
+@keyframes flipOutLeft {
+    from { }
+    to { -webkit-transform: translateZ(-1000px) rotateY(-90deg); transform: translateZ(-1000px) rotateY(-90deg); opacity: 0.2; }
+}
+
+@-webkit-keyframes flipInRight {
+    from { -webkit-transform: translateZ(-1000px) rotateY(90deg); opacity: 0.2; }
+}
+
+@keyframes flipInRight {
+    from { -webkit-transform: translateZ(-1000px) rotateY(90deg); transform: translateZ(-1000px) rotateY(90deg); opacity: 0.2; }
+}
